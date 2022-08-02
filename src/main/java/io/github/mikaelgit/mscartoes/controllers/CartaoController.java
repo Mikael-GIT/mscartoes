@@ -52,7 +52,7 @@ public class CartaoController {
     }
 
     @GetMapping(params = "renda")
-    public ResponseEntity getClienteByCpf(@RequestParam("renda") Long renda) throws Exception {
+    public ResponseEntity getCartoesByRenda(@RequestParam("renda") Long renda) throws Exception {
         Optional<List<Cartao>> cartoes = cartaoService.getCartoesRendaMenorOuIgual(renda);
         if(cartoes.isEmpty()){
             return ResponseEntity.notFound().build();
